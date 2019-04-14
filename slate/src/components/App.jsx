@@ -22,7 +22,7 @@ export default class App extends Component {
 					<Col lg={10} xs={12}>
 						<Row>
 							<Col style={{backgroundColor: '#f2f2f2'}} lg={6} xs={12}>
-								<h3 style={{padding: '1%', backgroundColor: 'white'}} >Introduction</h3>
+								<h3 style={{padding: '1%', backgroundColor: 'white', border: '1px solid #ccc'}} >Introduction</h3>
 								<div style={{padding: '4%'}}>
 									<p>
 										Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
@@ -50,7 +50,7 @@ export default class App extends Component {
 						</Row>
 						<Row>
 							<Col style={{backgroundColor: '#f2f2f2'}} lg={6} xs={12}>
-								<h3 style={{padding: '1%', backgroundColor: 'white'}} >Authentication</h3>
+								<h3 style={{padding: '1%', backgroundColor: 'white', border: '1px solid #ccc'}} >Authentication</h3>
 								<div style={{padding: '4%'}}>
 									<p>
 										Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.
@@ -61,7 +61,39 @@ export default class App extends Component {
 									<p>
 										<code>Authorization: meowmeowmeow</code>
 									</p>
+									<aside className="notice">
+										You must replace <code>meowmeowmeow</code> with your personal API key.
+									</aside>
 								</div>
+							</Col>
+							<Col style={{backgroundColor: '#2E3336', paddingLeft: '0'}} lg={6} xs={12}>
+								<div>
+									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em'}}>To authorize, use this code:</p>
+									<div style={{padding: '13px 2em', color: 'white'}}>
+										<p><span className="keyword">const</span> kittn = require(<span className="str">'kittn'</span>)</p>
+										<p>let api = kittn.authorize('meowmeowmeow')</p>
+									</div>
+									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em'}}>Make sure to replace <em>meowmeowmeow</em> with your API key.</p>
+								</div>
+							</Col>
+						</Row>
+						<Row>
+							<Col style={{backgroundColor: '#f2f2f2'}} lg={6} xs={12}>
+								<h3 style={{padding: '1%', backgroundColor: 'white', border: '1px solid #ccc'}} >Kittens</h3>
+								<div style={{padding: '4%'}}>
+									<p>
+										Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.
+									</p>
+									<p>
+										Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+									</p>
+									<p>
+										<code>Authorization: meowmeowmeow</code>
+									</p>
+									<aside className="notice">
+										You must replace <code>meowmeowmeow</code> with your personal API key.
+									</aside>
+								</div>			
 							</Col>
 							<Col style={{backgroundColor: '#2E3336', paddingLeft: '0'}} lg={6} xs={12}>
 								<div>

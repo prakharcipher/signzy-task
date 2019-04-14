@@ -5,3 +5,9 @@
 .str {
 	color: #E6DB74;
 }
+
+.notice {
+	color: #333333;
+	background-color: #8FBCD4;
+	padding: 14px 28px;
+}
