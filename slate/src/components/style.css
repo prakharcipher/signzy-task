@@ -11,3 +11,50 @@
 	background-color: #8FBCD4;
 	padding: 14px 28px;
 }
+
+.notice-green {
+	color: #333333;
+	background-color: #6AC174;
+	padding: 14px 28px;
+}
+
+thead {
+	border-collapse: collapse;
+	vertical-align: middle;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+}
+
+th {
+	padding: 5px 10px;
+	border-bottom: 1px solid #ccc;
+	vertical-align: bottom;
+	text-align: left;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+	vertical-align: top;
+
+}
+
+tr:nth-child(odd)>td {
+	background-color: white;
+}
+
+tr:nth-child(even)>td {
+	background-color: #fbfcfd;
+}
+
+li {
+	margin: 10px 0;
+}

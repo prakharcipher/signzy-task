@@ -3,11 +3,28 @@ import {Row, Col, Nav, Form, Tabs, Tab} from 'react-bootstrap';
 import MidBody from './MidBody';
 import './style.css';
 
+const data = [
+  {
+    "id": 1,
+    "name": "Fluffums",
+    "breed": "calico",
+    "fluffiness": 6,
+    "cuteness": 7
+  },
+  {
+    "id": 2,
+    "name": "Max",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
+];
+
 export default class App extends Component {
 	render() {
 		return (
 				<Row>
-					<Col style={{backgroundColor: '#2E3336', color: 'white', zIndex: '30', position: 'fixed', left: '0', top: '0', height: '100vh'}} lg={2}>
+					<Col className="hidden-xs" style={{backgroundColor: '#2E3336', color: 'white', zIndex: '30', position: 'fixed', left: '0', top: '0', height: '100vh'}} lg={2}>
 						<img style={{width: '100%', display: 'block', margin: 'auto'}} alt="logo" src="https://lord.github.io/slate/images/logo.png" /><br />
 						<Form.Control style={{width: '90%', margin: 'auto', backgroundColor: '#2E3336', color: 'gray'}} type="text" placeholder="%search%" /><br/>
 						<Nav defaultActiveKey="/home" className="flex-column">
@@ -15,7 +32,6 @@ export default class App extends Component {
 						  	<li>Introduction</li>
 							  <li>Authentication</li>
 							  <li>Kittens</li>
-							  <li>Errors</li>
 						  </ul>
 						</Nav>
 					</Col>
@@ -68,8 +84,8 @@ export default class App extends Component {
 							</Col>
 							<Col style={{backgroundColor: '#2E3336', paddingLeft: '0'}} lg={6} xs={12}>
 								<div>
-									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em'}}>To authorize, use this code:</p>
-									<div style={{padding: '13px 2em', color: 'white'}}>
+									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em', marginTop: '10%'}}>To authorize, use this code:</p>
+									<div style={{padding: '13px 2em', color: 'white', backgroundColor: '#1E2224'}}>
 										<p><span className="keyword">const</span> kittn = require(<span className="str">'kittn'</span>)</p>
 										<p>let api = kittn.authorize('meowmeowmeow')</p>
 									</div>
@@ -84,29 +100,47 @@ export default class App extends Component {
 								<p style={{padding: '0 4% 4% 4%'}}>The endpoint retrieves all kittens.</p>
 								<h5 style={{padding: '4% 4% 0 4%'}}>HTTP Request</h5>
 								<code style={{padding: '0 4% 4% 4%'}}>GET http://example.com/api/kittens</code>
+								<br />
 								<div style={{padding: '4%'}}>
-									<p>
-										Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.
-									</p>
-									<p>
-										Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-									</p>
-									<p>
-										<code>Authorization: meowmeowmeow</code>
-									</p>
-									<aside className="notice">
-										You must replace <code>meowmeowmeow</code> with your personal API key.
+									<h5>Query Parameters</h5>
+									<table>
+										<thead>
+											<tr>
+												<th>Parameter</th>
+												<th>Default</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>include_cats</td>
+												<td>false</td>
+												<td>If set to true, the result will also include cats.</td>
+											</tr>
+											<tr>
+												<td>available</td>
+												<td>true</td>
+												<td>If set to false, the results will include kittens that have already been adopted.</td>
+											</tr>
+										</tbody>
+									</table><br />
+									<aside className="notice-green">
+										&#10003; Remember -- A happy kitten is an authenticated kitten!
 									</aside>
 								</div>			
 							</Col>
 							<Col style={{backgroundColor: '#2E3336', paddingLeft: '0'}} lg={6} xs={12}>
-								<div>
-									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em'}}>To authorize, use this code:</p>
-									<div style={{padding: '13px 2em', color: 'white'}}>
+								<div style={{marginTop: '15%'}}>
+									<div style={{padding: '13px 2em', color: 'white', backgroundColor: '#1E2224'}}>
 										<p><span className="keyword">const</span> kittn = require(<span className="str">'kittn'</span>)</p>
-										<p>let api = kittn.authorize('meowmeowmeow')</p>
+										<p><span className="keyword">let</span> api = kittn.authorize(<span className="str">'meowmeowmeow'</span>)<br /><span className="keyword">let</span> kittens = api.kittens.get();</p>
 									</div>
-									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em'}}>Make sure to replace <em>meowmeowmeow</em> with your API key.</p>
+									<p style={{backgroundColor: '#191D1F', color: '#EEEEEE', padding: '13px 2em', margin: '0'}}>The above command returns JSON structured like this:</p>
+									<div style={{padding: '13px 2em', color: 'white', backgroundColor: '#1E2224'}}>
+										<pre style={{backgroundColor: '#1E2224', border: '0', color: '#E6DB74'}}>
+											{JSON.stringify(data, undefined, 2)}
+										</pre>
+									</div>
 								</div>
 							</Col>
 						</Row>
