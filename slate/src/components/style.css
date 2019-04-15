@@ -61,4 +61,5 @@ tr:nth-child(even)>td {
 
 li {
 	margin: 10px 0;
+	cursor: pointer;
 }
