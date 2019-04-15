@@ -7,7 +7,7 @@ export default class App extends Component {
 	render() {
 		return (
 				<Row>
-					<Col style={{backgroundColor: '#2E3336', color: 'white', zIndex: '30'}} lg={2}>
+					<Col style={{backgroundColor: '#2E3336', color: 'white', zIndex: '30', position: 'fixed', left: '0', top: '0', height: '100vh'}} lg={2}>
 						<img style={{width: '100%', display: 'block', margin: 'auto'}} alt="logo" src="https://lord.github.io/slate/images/logo.png" /><br />
 						<Form.Control style={{width: '90%', margin: 'auto', backgroundColor: '#2E3336', color: 'gray'}} type="text" placeholder="%search%" /><br/>
 						<Nav defaultActiveKey="/home" className="flex-column">
@@ -19,7 +19,7 @@ export default class App extends Component {
 						  </ul>
 						</Nav>
 					</Col>
-					<Col lg={10} xs={12}>
+					<Col lg={{size: 10, offset: 2}} xs={12} >
 						<Row>
 							<Col style={{backgroundColor: '#f2f2f2'}} lg={6} xs={12}>
 								<h3 style={{padding: '1%', backgroundColor: 'white', border: '1px solid #ccc'}} >Introduction</h3>
@@ -36,7 +36,7 @@ export default class App extends Component {
 								</div>
 							</Col>
 							<Col style={{backgroundColor: '#2E3336'}} lg={6} xs={12}>
-								<Tabs defaultActiveKey="shell" id="uncontrolled-tab-example">
+								<Tabs style={{position: 'fixed', right: '0', top: '0', width: '41.5%'}} defaultActiveKey="shell" id="uncontrolled-tab-example">
 								  <Tab eventKey="shell" title="Shell">
 								  </Tab>
 								  <Tab eventKey="ruby" title="Ruby">
@@ -80,6 +80,10 @@ export default class App extends Component {
 						<Row>
 							<Col style={{backgroundColor: '#f2f2f2'}} lg={6} xs={12}>
 								<h3 style={{padding: '1%', backgroundColor: 'white', border: '1px solid #ccc'}} >Kittens</h3>
+								<h5 style={{padding: '4%'}}>Get All Kittens</h5>
+								<p style={{padding: '0 4% 4% 4%'}}>The endpoint retrieves all kittens.</p>
+								<h5 style={{padding: '4% 4% 0 4%'}}>HTTP Request</h5>
+								<code style={{padding: '0 4% 4% 4%'}}>GET http://example.com/api/kittens</code>
 								<div style={{padding: '4%'}}>
 									<p>
 										Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.
