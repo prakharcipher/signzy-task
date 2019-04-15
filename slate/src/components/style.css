@@ -2,6 +2,10 @@
 	color:#66D9EF;
 } 
 
+.keyword-py {
+	color: #F92672;
+}
+
 .str {
 	color: #E6DB74;
 }
