@@ -81,6 +81,12 @@ export default class App extends Component {
 						  </ul>
 						</Nav>
 					</Col>
+					<Tabs style={{position: 'fixed', right: '0', top: '0', width: '41.5%', zIndex: 100}} defaultActiveKey={this.state.key} id="uncontrolled-tab-example" onSelect={key => this.setState({ key })}>
+					  <Tab eventKey="javascript" title="JavaScript">
+					  </Tab>
+					  <Tab eventKey="python" title="Python">
+					  </Tab>
+					</Tabs>
 					<Col lg={{size: 10, offset: 2}} xs={12} >
 						<Row>
 						<ScrollableAnchor id={'intro'}>
@@ -99,13 +105,8 @@ export default class App extends Component {
 								</div>
 							</Col>
 							</ScrollableAnchor>
-							<Col style={{backgroundColor: '#2E3336'}} lg={6} xs={12}>
-								<Tabs style={{position: 'fixed', right: '0', top: '0', width: '41.5%'}} defaultActiveKey={this.state.key} id="uncontrolled-tab-example" onSelect={key => this.setState({ key })}>
-								  <Tab eventKey="javascript" title="JavaScript">
-								  </Tab>
-								  <Tab eventKey="python" title="Python">
-								  </Tab>
-								</Tabs>
+							<Col className="hidden-xs" style={{backgroundColor: '#2E3336'}} lg={6} xs={12}>
+								
 							</Col>
 						</Row>
 						<Row>
